@@ -3,8 +3,8 @@ const path = require('path');
 const { Products } = require('../db');
 
 const JSONFilePath = path.join(__dirname, '../../api/db.json');  
-
-const getAllProductsC = async (page = 1, perPage = 6) => {
+//const getAllProductsC = async (page = 1, perPage = 10)
+const getAllProductsC = async (page=1) => {
     try {
         if (page === 'all') {
             // Si se proporciona 'all', obtener todos los productos
@@ -14,8 +14,8 @@ const getAllProductsC = async (page = 1, perPage = 6) => {
         }
 
         // Calcular el índice de inicio y fin para la paginación
-        const startIndex = (page - 1) * perPage;
-        const endIndex = startIndex + perPage;
+        // const startIndex = (page - 1) * perPage;
+        // const endIndex = startIndex + perPage;
 
         // Obtener la cantidad total de productos en la base de datos
         const totalProductsCount = await Products.count();
@@ -40,17 +40,23 @@ const getAllProductsC = async (page = 1, perPage = 6) => {
             }));
 
             // Insertar productos en la base de datos
+            // const insertedProducts = await Products.bulkCreate(apiProducts);
+            // console.log('Productos insertados en la base de datos:', insertedProducts.length);
+            // return insertedProducts.slice(startIndex, endIndex);
+
             const insertedProducts = await Products.bulkCreate(apiProducts);
             console.log('Productos insertados en la base de datos:', insertedProducts.length);
-            return insertedProducts.slice(startIndex, endIndex);
+            return insertedProducts;
         }
 
         // Obtener productos paginados desde la base de datos
-        const productsDB = await Products.findAll({
-            offset: startIndex,
-            limit: perPage,
-        });
-        console.log('Productos obtenidos de la base de datos (paginados):', productsDB.length);
+        // const productsDB = await Products.findAll({
+        //     offset: startIndex,
+        //     limit: perPage,
+        // });
+        const productsDB = await Products.findAll();
+
+        // console.log('Productos obtenidos de la base de datos (paginados):', productsDB.length);
         return productsDB;
     } catch (error) {
         throw new Error(error.message);

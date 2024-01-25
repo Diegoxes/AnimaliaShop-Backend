@@ -3,8 +3,8 @@ const { getAllProductsC } = require("../controllers/getAllProductsC");
 
 const getAllProductsH = async (req, res) => {
   const {
-    page = 1,
-    perPage = 6,
+    // page = 1,
+    // perPage = 10,
     title,
     price,
     category,
@@ -21,7 +21,7 @@ const getAllProductsH = async (req, res) => {
     }
   } else {
     try {
-      const products = await getAllProductsC(page, perPage);
+      const products = await getAllProductsC();//const products = await getAllProductsC(page, perPage);
       res.status(200).json(products);
     } catch (error) {
       res.status(500).json({ error: error.message });

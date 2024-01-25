@@ -65,5 +65,54 @@
         "image": "https://m.media-amazon.com/images/I/51Wcrp13kaL._AC_SX679_.jpg",
         "stock": 20,
         "available": true
-      } 
+      } ,
+      {
+        "id": 7,
+        "title": "Cactus Shaped Tree",
+        "description": "Árbol de cactus para gatos de 40 pulgadas con hamaca grande de alfombra de metal, poste rascador para gatos de interior con condominio y bola colgante, verde",
+        "price": 39.99,
+        "category": "Furnitures",
+        "manufacturer": "Muttros",
+        "image": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/81qxW86+UsL._AC_SX679_.jpg",
+        "stock": 10,
+        "available": true
+      } ,
+      {
+
+        "id": 8,
+        "title": "Cat Tracker",
+        "description": "Rastreador GPS de ubicación impermeable 2 en 1 para gatos - Sin tarifa mensual - Collar de seguimiento GPS reflectante en tiempo real - Funciona con Apple Find My (solo iOS)",
+        "price": 29.99,
+        "category": "Collar",
+        "manufacturer": "Vebiso",
+        "image": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/71-aTgfFbtL._AC_SX679_.jpg",
+        "stock": 13,
+        "available": true
+
+      },
+      {
+        "id": 9,
+        "title": "Collar GPS",
+        "description": "Rastreador GPS de ubicación impermeable 2 en 1 para gatos - Sin tarifa mensual - Collar de seguimiento GPS reflectante en tiempo real - Funciona con Apple Find My (solo iOS)",
+        "price": 29.99,
+        "category": "Collar",
+        "manufacturer": "Vebiso",
+        "image": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/71-aTgfFbtL._AC_SX679_.jpg",
+        "stock": 13,
+        "available": true
+
+      },
+      {
+        "id": 10,
+        "title": "Comedero Automatico",
+        "description": "Comedero automático para gatos, dispensador de alimentos secos para mascotas, triple conservación con cuenco de acero inoxidable y tapa de bloqueo con rosca, hasta 50 porciones, 6 comidas al día, comedero para mascotas pequeñas y medianas",
+        "price": 65.99,
+        "category": "Comederos",
+        "manufacturer": "Pet Libro",
+        "image": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/71a885Afh9L._AC_SY879_.jpg",
+        "stock": 15,
+        "available": true
+      }
+
+
     ]

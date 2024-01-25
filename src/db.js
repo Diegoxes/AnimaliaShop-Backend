@@ -3,12 +3,15 @@ const { Sequelize } = require("sequelize");
 
 const fs = require("fs");
 const path = require("path");
-// const {  } = process.env;
+const {DB_PASSWORD} = process.env;
 
-const sequelize = new Sequelize(`postgres://postgres:diegm0204@localhost/AnimaliaShop`, {
+const sequelize = new Sequelize(`postgres://postgres:${DB_PASSWORD}@localhost/AnimaliaShop`, {
   logging: false,
   native: false,
 });
+
+
+
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
@@ -33,8 +36,6 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 const {  Products, Review, Users, Categories } = sequelize.models;
 
-// Aca vendrian las relaciones
-// Product.hasMany(Reviews);
 
 /* Relacion entre Productos y Usuarios */
 Products.belongsToMany(Users, { through: "user_favorites", timestamps: false });
