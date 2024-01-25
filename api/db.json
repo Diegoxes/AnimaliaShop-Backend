@@ -1,11 +1,11 @@
-{
-    "Products": [
+
+     [
       {
         "id": 1,
         "title": "Pooph",
         "description": "Eliminador de olores para mascotas, aerosol de 32 onzas, paquete de 2  Desmonta olores sobre una base molecular, perros, gatos, ambientador, eliminador, orina, caca, orina, orina, desodorante, naturales, cachorros, fresco, limpio, muebles, orina",
         "price": 47.94,
-        "category": "-",
+        "category": "Sprays",
         "manufacturer": "Pooph",
         "image": "https://m.media-amazon.com/images/I/91Jj7F6rxXL._AC_SX679_.jpg",
         "stock": 50,
@@ -16,7 +16,7 @@
         "title": "Dog Bed Orthopedic",
         "description": "Sofá cama ortopédica para perros – Camas ultra cómodas para perros medianos – Cama transpirable e impermeable para mascotas – Sofá cama de espuma de huevo con soporte adicional para la cabeza y el",
         "price": 25.99,
-        "category": "Bed",
+        "category": "Beds",
         "manufacturer": "Pitpet",
         "image": "https://m.media-amazon.com/images/I/819fiUNwweL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
         "stock": 15,
@@ -36,14 +36,34 @@
       {
         "id": 4,
         "title": "Pig Shaped Toy",
-        "description": "Juguete de peluche activo para mascotas en movimiento para perros pequeños, juguete interactivo de cerdo para perros, bolas rebotadoras para mascotas, recargable por USB, interactivo, lavable, de",
+        "description": "Juguete de peluche activo para mascotas en movimiento para perros pequeños, juguete interactivo de cerdo para perros, bolas rebotadoras para mascotas, recargable por USB, interactivo, lavable.",
         "price": 17.99,
         "category": "Toys",
         "manufacturer": "Generic",
         "image": "https://m.media-amazon.com/images/I/61F6q8gAaTL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
         "stock": 13,
         "available": true
-      }
-      
+      },
+      {
+        "id": 5,
+        "title": "Tooth Remover",
+        "description": "Nature Nerds Removedor de placa para dientes, kit de cepillado de dientes de mascotas, herramientas dentales para eliminar la placa y el sarro, seguro para perros y gatos, con luz LED, color blanco",
+        "price": 36.99,
+        "category": "Brushes",
+        "manufacturer": "Nature Nerds",
+        "image": "https://m.media-amazon.com/images/I/71gO4wq+umL._AC_SX679_.jpg",
+        "stock": 10,
+        "available": true
+      },
+      {
+        "id": 6,
+        "title": "Dog Balls",
+        "description": "Un juguete chirriante y divertido: el Squeaker Ballz de Outward Hound combina los dos favoritos de tu perro, una pelota de tenis y un juguete chirriante, en un emocionante juguete de búsqueda.",
+        "price": 6.29,
+        "category": "Toys",
+        "manufacturer": "Outward Hound ",
+        "image": "https://m.media-amazon.com/images/I/51Wcrp13kaL._AC_SX679_.jpg",
+        "stock": 20,
+        "available": true
+      } 
     ]
-}
