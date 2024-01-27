@@ -1,4 +1,5 @@
 const { getAllProductsC } = require("../controllers/getAllProductsC");
+const { filterProducts } = require("../controllers/Filters/allFilters");
 
 
 const getAllProductsH = async (req, res) => {
@@ -28,7 +29,7 @@ const getAllProductsH = async (req, res) => {
     }
   }
 };
-//adsdssfs
+
 module.exports = {
   getAllProductsH,
 };
