@@ -1,7 +1,6 @@
 const { Router } = require("express");
 const { getAllProductsH } = require("../handlers/getAllProductsH");
 const { getProductByTitleH } = require("../handlers/getProductByTitleH");
-
 const { getProductByIdH } = require("../handlers/getProductByIdH");
 
 

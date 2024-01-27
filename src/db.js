@@ -50,12 +50,11 @@ Review.belongsToMany(Products, {
   through: "products_reviews",
   timestamps: false,
 });
+// En el modelo Products
+Products.belongsTo(Categories, { foreignKey: 'category' });
 
 /*Relacion entre Categoria y Productos */
 Categories.hasMany(Products, { foreignKey: "category" });
-
-Products.belongsTo(Categories, { foreignKey: "id_categoria" });
-
 Users.belongsToMany(Review, { through: "users_reviews", timestamps: false });
 Review.belongsToMany(Users, { through: "users_reviews", timestamps: false });
 
