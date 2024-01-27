@@ -3,14 +3,15 @@ const { Sequelize } = require("sequelize");
 
 const fs = require("fs");
 const path = require("path");
-const {DB_PASSWORD} = process.env;
+const { DB_PASSWORD } = process.env;
 
-const sequelize = new Sequelize(`postgres://postgres:${DB_PASSWORD}@localhost/AnimaliaShop`, {
-  logging: false,
-  native: false,
-});
-
-
+const sequelize = new Sequelize(
+  `postgres://postgres:${DB_PASSWORD}@localhost/AnimaliaShop`,
+  {
+    logging: false,
+    native: false,
+  }
+);
 
 const basename = path.basename(__filename);
 
@@ -34,8 +35,7 @@ let capsEntries = entries.map((entry) => [
 ]);
 sequelize.models = Object.fromEntries(capsEntries);
 
-const {  Products, Review, Users, Categories } = sequelize.models;
-
+const { Products, Review, Users, Categories } = sequelize.models;
 
 /* Relacion entre Productos y Usuarios */
 Products.belongsToMany(Users, { through: "user_favorites", timestamps: false });
@@ -52,7 +52,7 @@ Review.belongsToMany(Products, {
 });
 
 /*Relacion entre Categoria y Productos */
-Categories.hasMany(Products, { foreignKey: "id_categoria" });
+Categories.hasMany(Products, { foreignKey: "category" });
 
 Users.belongsToMany(Review, { through: "users_reviews", timestamps: false });
 Review.belongsToMany(Users, { through: "users_reviews", timestamps: false });
