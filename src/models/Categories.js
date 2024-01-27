@@ -4,16 +4,15 @@ module.exports = (sequelize) => {
   // defino el modelo
 
   sequelize.define("Categories", {
-    id: {
-      type: DataTypes.INTEGER,
+    category: {
+      type: DataTypes.STRING,
       allowNull: false,
-      autoIncrement: true,
       primaryKey: true,
       unique: true,
     },
-    nameCategory: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    // nameCategory: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
   });
 };
