@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { Products, Categories } = require("../db");
-
+const { Op } = require("sequelize");
 const JSONFilePath = path.join(__dirname, "../../api/db.json");
 //const getAllProductsC = async (page = 1, perPage = 10)
 const getAllProductsC = async (page = 1) => {
@@ -55,7 +55,10 @@ const getAllProductsC = async (page = 1) => {
       );
       return insertedProducts;
     }
-    const productsDB = await Products.findAll();
+    const productsDB = await Products.findAll({
+      where: { stock: { [Op.gt]: 0 } },
+    });
+
     return productsDB;
   } catch (error) {
     throw new Error(error.message);
