@@ -1,22 +1,23 @@
-const { createCategoriesC } = require("../services/categoryService"); // Asegúrate de que la ruta sea correcta
+const { createCategoriesC } = require("../controllers/createCategoriesC");
 
-const createCategoryHandler = async (req, res) => {
-  const { categoryName } = req.body;
+const createCategoriesH = async (req, res) => {
+  const { category } = req.body;
 
   try {
-    const result = await createCategoriesC(categoryName); // Aquí también ajusta el nombre de la función
+    const result = await createCategoriesC(category);
 
-    if (result.error) {
-      return res.status(400).json({ error: result.error });
+    if (!result || result.error) {
+      return res
+        .status(400)
+        .json({ error: result ? result.error : "Error al crear la categoría" });
     }
 
-    res.status(201).json(result); // Puedes ajustar la respuesta según tus necesidades
+    return res.status(201).json({ data: result.data });
   } catch (error) {
-    console.error('Error al manejar la solicitud:', error);
-    res.status(500).json({ error: 'Error interno del servidor' });
+    return res.status(500).json({ error: "Error interno del servidor" });
   }
 };
 
 module.exports = {
-  createCategoryHandler,
+  createCategoriesH,
 };
