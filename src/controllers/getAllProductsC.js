@@ -31,7 +31,7 @@ const getAllProductsC = async (page = 1) => {
           stock,
           price,
           image,
-          available,
+
           description,
           category,
         }) => ({
@@ -40,7 +40,7 @@ const getAllProductsC = async (page = 1) => {
           stock,
           price,
           image,
-          available,
+
           description,
           category,
         })
