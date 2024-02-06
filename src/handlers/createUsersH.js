@@ -1,4 +1,4 @@
-const { postUserC } = require('../controllers/postUserC');
+const { postUserC } = require('../controllers/createUsersC');
 
 const postUserH = async(req, res) => {
     postUserC(req)
