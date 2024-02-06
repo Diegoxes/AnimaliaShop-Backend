@@ -1,8 +1,8 @@
-const fs = require("fs");
-const path = require("path");
+// const fs = require("fs");
+// const path = require("path");
 const { Products, Categories } = require("../db");
 
-const JSONFilePath = path.join(__dirname, "../../api/db.json");
+// const JSONFilePath = path.join(__dirname, "../../api/db.json");
 
 const getProductByIdC = async (productId) => {
   try {

@@ -10,9 +10,5 @@ module.exports = (sequelize) => {
       primaryKey: true,
       unique: true,
     },
-    // nameCategory: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // },
   });
 };
