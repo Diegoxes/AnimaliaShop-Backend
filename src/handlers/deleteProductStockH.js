@@ -1,6 +1,6 @@
-const { deleteProductC } = require("../controllers/deleteProductC");
+const { deleteProductStockC } = require("../controllers/deleteProductStockC");
 
-const deleteProductH = async (req, res) => {
+const deleteProductStockH = async (req, res) => {
   try {
     const { productId } = req.params;
     const { quantityToDelete } = req.body;
@@ -8,7 +8,7 @@ const deleteProductH = async (req, res) => {
     //{
     // "quantityToDelete": 40
     //}
-    const result = await deleteProductC(productId, quantityToDelete);
+    const result = await deleteProductStockC(productId, quantityToDelete);
 
     if (result.message) {
       res.status(200).json(result);
@@ -20,4 +20,4 @@ const deleteProductH = async (req, res) => {
   }
 };
 
-module.exports = { deleteProductH };
+module.exports = { deleteProductStockH };

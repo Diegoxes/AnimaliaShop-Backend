@@ -10,9 +10,14 @@ module.exports = (sequelize) => {
       primaryKey: true,
       unique: true,
     },
-    // nameCategory: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
+    deleted: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
   });
 };

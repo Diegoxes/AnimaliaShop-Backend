@@ -1,24 +1,27 @@
 const { Categories } = require("../db");
 
-const createCategoriesC = async (category) => {
-  if (category) {
-    try {
-      const existingCategory = await Categories.findOne({
-        where: { category: category },
-      });
+const createCategoriesC = async (category, image) => {
+  try {
+    const existingCategory = await Categories.findOne({
+      where: { category: category },
+    });
 
-      if (existingCategory) {
-        return { data: existingCategory };
-      }
-
-      const newCategory = await Categories.create({
-        category: category,
-      });
-
-      return { data: newCategory };
-    } catch (error) {
-      return { error: "Error interno del servidor", details: error };
+    if (existingCategory) {
+      console.log(`La categoría '${category}' ya existe en la base de datos.`);
+      return { data: existingCategory };
     }
+
+    const newCategory = await Categories.create({
+      category: category,
+      image: image,
+    });
+
+    console.log(`Nueva categoría '${category}' creada con éxito.`);
+
+    return { data: newCategory };
+  } catch (error) {
+    console.error("Error al crear la categoría:", error);
+    return { error: "Error interno del servidor", details: error };
   }
 };
 
