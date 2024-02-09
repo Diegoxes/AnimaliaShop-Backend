@@ -1,6 +1,6 @@
 const { Products } = require("../db");
 
-const deleteProductC = async (productId, quantityToDelete) => {
+const deleteProductStockC = async (productId, quantityToDelete) => {
   try {
     if (quantityToDelete <= 0) {
       return { error: "La cantidad a eliminar debe ser mayor que cero" };
@@ -30,4 +30,4 @@ const deleteProductC = async (productId, quantityToDelete) => {
   }
 };
 
-module.exports = { deleteProductC };
+module.exports = { deleteProductStockC };
