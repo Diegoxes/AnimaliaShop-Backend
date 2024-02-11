@@ -14,7 +14,8 @@ const createUsersC = async (req) => {
       },
       defaults: {
         name: name || '', // Si name no está presente, se asigna una cadena vacía
-        photo: picture || '' // Si picture no está presente, se asigna una cadena vacía
+        photo: picture || '',
+        password:"", // Si picture no está presente, se asigna una cadena vacía
       }
     });
 

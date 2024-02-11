@@ -13,6 +13,7 @@ const { uploadImageH } = require("../handlers/uploadImageH");
 const { deleteProduct } = require("../Dashboard/deleteProduct");
 const { deleteCategories } = require("../Dashboard/deleteCategories");
 const { createUsersH } = require("../handlers/createUsersH");
+const { getAllUsersH } = require("../handlers/getAllUsersH");
 
 const router = Router();
 
@@ -30,5 +31,6 @@ router.post("/uploadImage", uploadImageH);
 router.delete("/deleteProduct/:productId", deleteProduct);
 router.delete("/deleteCategories/:category", deleteCategories);
 router.post("/users", createUsersH);
+router.get("/users", getAllUsersH);
 
 module.exports = router;
