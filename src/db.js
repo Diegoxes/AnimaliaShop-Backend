@@ -3,10 +3,13 @@ const { Sequelize } = require("sequelize");
 
 const fs = require("fs");
 const path = require("path");
-const { DB_PASSWORD } = process.env;
+const {BDD} = process.env;
+
+const password = "D;/p~Yx#Z6<wD^gn";
+const encodedPassword = encodeURIComponent(password);
 
 const sequelize = new Sequelize(
-  `postgres://postgres:${DB_PASSWORD}@localhost/AnimaliaShop`,
+  `postgres://postgres:${encodedPassword}@localhost/${BDD}`,
   {
     logging: false,
     native: false,

@@ -26,7 +26,8 @@ const getProductByTitleC = async (title) => {
       product.title.toLowerCase().includes(title.toLowerCase())
     );
 
-    const combinedProducts = [...dbProducts, ...apiProducts];
+    const combinedProducts = [...dbProducts, ...apiProducts.filter(apiProduct => !dbProducts.some(dbProduct => dbProduct.id === apiProduct.id))];
+
 
     if (combinedProducts.length === 0) {
       throw new Error("No se encontraron razas de perros con ese nombre.");
