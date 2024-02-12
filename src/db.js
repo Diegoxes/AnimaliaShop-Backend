@@ -46,14 +46,20 @@ Products.belongsToMany(Users, { through: "user_favorites", timestamps: false });
 Users.belongsToMany(Products, { through: "user_favorites", timestamps: false });
 
 /* Relacion entre Productos y Reviews */
-Products.belongsToMany(Review, {
-  through: "products_reviews",
-  timestamps: false,
-});
-Review.belongsToMany(Products, {
-  through: "products_reviews",
-  timestamps: false,
-});
+// Products.belongsToMany(Review, {
+//   through: "products_reviews",
+//   timestamps: false,
+// });
+// Review.belongsToMany(Products, {
+//   through: "products_reviews",
+//   timestamps: false,
+// });
+
+//////// Nueva relación entre Usuarios y Reseñas
+
+Users.hasMany(Review, { foreignKey: 'userId' }); // Ajusta 'userId' según tu modelo de Usuarios
+Review.belongsTo(Users, { foreignKey: 'userId' });
+/////////////////////////////////////////////////
 
 /*Relacion entre Categoria y Productos */
 Categories.hasMany(Products, { foreignKey: "category" });
