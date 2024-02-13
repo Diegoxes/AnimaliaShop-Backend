@@ -1,31 +1,29 @@
-const { Order, Products } = require("../db");
+const { Order } = require("../db.js");
 
-const createOrderC = async (productsSelected) => {
+const createOrderC = async (email, carrito) => {
   try {
-    const order = await Order.create({ estado: "pendiente" });
+    if (!email || !carrito) throw new Error("Incomplete data");
 
-    for (const producto of productsSelected) {
-      const { productId, cantidad } = producto;
+    const items = carrito.map((data) => {
+      const { title, price, stock, id } = data;
 
-      //Buscar el producto por ID en la base de datos
-      const product = await Products.findByPk(productId);
+      return {
+        producto_id: id,
+        producto_nombre: title,
+        price,
+        stock,
+        email,
+      };
+    });
 
-      //Verificar si el producto existe
-      if (product) {
-        // Agregar el producto al pedido con la cantidad especificada
-        await order.addProducts(product, { through: { cantidad } });
-      } else {
-        // Manejar el caso donde el producto no existe
-        return res
-          .status(404)
-          .json({ error: ` Producto con ID ${productId} no encontrado ` });
-      }
-    }
+    const order = await Order.bulkCreate(items);
 
-    return { message: "Pedido creado exitosamente" };
+    return order;
   } catch (error) {
-    throw error;
+    throw new Error(error.message);
   }
 };
 
-module.exports = { createOrderC };
+module.exports = {
+  createOrderC,
+};

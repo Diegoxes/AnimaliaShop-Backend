@@ -14,6 +14,10 @@ const { deleteProduct } = require("../Dashboard/deleteProduct");
 const { deleteCategories } = require("../Dashboard/deleteCategories");
 const { createUsersH } = require("../handlers/createUsersH");
 const { getAllUsersH } = require("../handlers/getAllUsersH");
+const { postCartH } = require("../handlers/postCartH");
+const { getCartH } = require("../handlers/getCartH");
+const { updateQuantityH } = require("../handlers/updateQuantityH");
+const { deleteCartH } = require("../handlers/deleteCartH");
 
 const router = Router();
 
@@ -32,5 +36,8 @@ router.delete("/deleteProduct/:productId", deleteProduct);
 router.delete("/deleteCategories/:category", deleteCategories);
 router.post("/users", createUsersH);
 router.get("/users", getAllUsersH);
-
+router.post("/cart", postCartH);
+router.get("/cart", getCartH);
+router.put("/cart/updatequantity", updateQuantityH);
+router.put("/cart", deleteCartH);
 module.exports = router;
