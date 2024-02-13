@@ -11,7 +11,6 @@ const deleteCategories = async (req, res) => {
       return res.status(404).json({ error: "Categoria no encontrada" });
     }
 
-    // Realizar el borrado lógico (actualizar el estado)
     categoryDelete.deleted = true;
     await categoryDelete.save();
 
