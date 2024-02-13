@@ -13,11 +13,11 @@ const { uploadImageH } = require("../handlers/uploadImageH");
 const { deleteProduct } = require("../Dashboard/deleteProduct");
 const { deleteCategories } = require("../Dashboard/deleteCategories");
 const { createUsersH } = require("../handlers/createUsersH");
-// review
-const { 
-    handleCreateReview, 
-    handleGetReviews 
-} = require("../handlers/reviewH");
+const { getAllUsersH } = require("../handlers/getAllUsersH");
+// REVIEW
+const { handleGetReviews, handleCreateReview } = require("../handlers/reviewH");
+
+
 
 const router = Router();
 
@@ -35,6 +35,7 @@ router.post("/uploadImage", uploadImageH);
 router.delete("/deleteProduct/:productId", deleteProduct);
 router.delete("/deleteCategories/:category", deleteCategories);
 router.post("/users", createUsersH);
+router.get("/users", getAllUsersH);
 
 //reviews
 router.get("/review", handleGetReviews);

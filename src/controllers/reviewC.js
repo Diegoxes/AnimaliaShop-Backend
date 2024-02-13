@@ -1,13 +1,10 @@
-const { Review, Users } = require('../db');
-
-console.log('base de datos de review' , Review);
-console.log('base de datos de users', Users);
+const {Review, Users} =require('../db')
 
 async function getReviews() {
   try {
     const pageReviews = await Review.findAll({
-      where: { pageReview: true }, // Filtra solo las revisiones de la página
-      include: [{ model: Users }], // Incluye la información del usuario que hizo la revisión
+      // where: { pageReview: true }, // Filtra solo las revisiones de la página
+      // include: [{ model: Users }], // Incluye la información del usuario que hizo la revisión
     });
 
     return { success: true, reviews: pageReviews || [] };

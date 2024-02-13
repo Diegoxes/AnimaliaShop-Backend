@@ -32,6 +32,6 @@ async function handleCreateReview(req, res) {
     return res.status(500).json(result);
   }
 }
-
+//hola
 
 module.exports = { handleGetReviews, handleCreateReview };
