@@ -1,41 +1,43 @@
-const { Review, Users } = require('../db');
-
-console.log('base de datos de review' , Review);
-console.log('base de datos de users', Users);
+const {Review, Users} =require('../db')
 
 async function getReviews() {
   try {
     const pageReviews = await Review.findAll({
-      where: { pageReview: true }, // Filtra solo las revisiones de la página
-      include: [{ model: Users }], // Incluye la información del usuario que hizo la revisión
+      include: [
+        {
+          model: Users,
+        },
+      ]
     });
 
-    return { success: true, reviews: pageReviews || [] };
+    return { success: true, reviews: pageReviews  };
   } catch (error) {
     console.error(error);
     return { success: false, error: 'Error al obtener las revisiones de la página.' };
   }
 }
 
-async function createReview(reviewData) {
+async function createReview(userId, content, score) {
   try {
-    console.log('Datos de revisión:', reviewData);
+    // Verifica si el usuario existe antes de crear la revisión
+    const user = await Users.findByPk(userId);
+    if (!user) {
+      return { success: false, message: 'Usuario no encontrado.', error: 'Usuario no encontrado.' };
+    }
 
-    // Ajusta userId según cómo estás manejando las sesiones y la autenticación
-    const userId = reviewData.userId;
-
+    // Crea la revisión asociada al usuario
     const newReview = await Review.create({
-      content: reviewData.content,
-      score: reviewData.score,
-      userId: userId, // Asigna la revisión al usuario que la creó
-      pageReview: true, // Indica que es una revisión de la página
+      content,
+      score,
     });
 
-    console.log('Revisión creada con éxito:', newReview);
-    return { success: true, review: newReview };
+    // Asocia la revisión al usuario
+    await user.addReview(newReview);
+
+    return { success: true, message: 'Revisión creada correctamente.', review: newReview };
   } catch (error) {
-    console.error('Error al crear la revisión:', error);
-    return { success: false, error: 'Error al crear la revisión.' };
+    console.error('Error al crear revisión:', error);
+    return { success: false, message: 'Error al crear la revisión.', error: error.message };
   }
 }
 

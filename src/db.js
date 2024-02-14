@@ -57,8 +57,8 @@ Users.belongsToMany(Products, { through: "user_favorites", timestamps: false });
 
 //////// Nueva relación entre Usuarios y Reseñas
 
-Users.hasMany(Review, { foreignKey: 'userId' }); // Ajusta 'userId' según tu modelo de Usuarios
-Review.belongsTo(Users, { foreignKey: 'userId' });
+Users.belongsToMany(Review, { through: "users_reviews", timestamps: false });
+Review.belongsToMany(Users, { through: "users_reviews", timestamps: false });
 /////////////////////////////////////////////////
 
 /*Relacion entre Categoria y Productos */
