@@ -1,4 +1,7 @@
+
 const { Users } = require("../db");
+const mailTo = require("./mailer/mailTo");
+const message = require("./mailer/message");
 
 const createUsersC = async (req) => {
   try {
@@ -45,6 +48,7 @@ const createUsersC = async (req) => {
         console.log("Email sent successfully");
       }
     }
+
     return user;
   } catch (error) {
     throw new Error(error.message);

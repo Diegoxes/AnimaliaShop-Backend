@@ -54,7 +54,7 @@ module.exports = (name, html, link) => `
 </head>
 <body>
   <div class="container">
-    <h1>PetVogue - Veterinaria</h1>
+    <h1>Animalia - Shop</h1>
     <h3>${name}</h3>
     <p>${html}</p>
     <a href=${link}>Link</a>
