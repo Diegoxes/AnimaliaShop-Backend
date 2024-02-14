@@ -42,8 +42,8 @@ sequelize.models = Object.fromEntries(capsEntries);
 const { Order, Products, Review, Users, Categories } = sequelize.models;
 
 /* Relacion entre Productos y Usuarios */
-Products.belongsToMany(Users, { through: "user_favorites", timestamps: false });
-Users.belongsToMany(Products, { through: "user_favorites", timestamps: false });
+// Products.belongsToMany(Users, { through: "user_favorites", timestamps: false });
+// Users.belongsToMany(Products, { through: "user_favorites", timestamps: false });
 
 /* Relacion entre Productos y Reviews */
 // Products.belongsToMany(Review, {
