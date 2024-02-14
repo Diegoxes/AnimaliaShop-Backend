@@ -1,0 +1,26 @@
+[
+    {
+      "email": "diegoxesfc@gmail.com",
+      "isBanned": false,
+      "isAdmin": true,
+      "name": "Diego",
+      "address": "Calle 123",
+      "country": "País 1",
+      "city": "Ciudad 1",
+      "phone": "123456789",
+      "password": "contraseña123",
+      "photo": ""
+    },
+    {
+      "email": "emilopez197@gmail.com",
+      "isBanned": false,
+      "isAdmin": true,
+      "name": "Emiliano",
+      "address": "Calle 456",
+      "country": "País 2",
+      "city": "Ciudad 2",
+      "phone": "987654321",
+      "password": "contraseña456",
+      "photo": "ruta/a/la/foto2.jpg"
+    }
+  ]
