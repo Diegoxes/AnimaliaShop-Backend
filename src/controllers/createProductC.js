@@ -24,7 +24,7 @@ const createProductC = async (data) => {
     const newProduct = await Products.create({
       title,
       description,
-      price,
+      price: Number(price),
       category,
       image: imageUrl,
       stock,

@@ -9,7 +9,27 @@ module.exports = (sequelize) => {
       primaryKey: true,
       unique: true,
     },
-    estado: {
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    producto_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    producto_nombre: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    price: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+    },
+    stock: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    status: {
       type: DataTypes.STRING,
       allowNull: false,
       defaultValue: "pendiente",
