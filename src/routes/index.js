@@ -18,8 +18,12 @@ const { postCartH } = require("../handlers/postCartH");
 const { getCartH } = require("../handlers/getCartH");
 const { updateQuantityH } = require("../handlers/updateQuantityH");
 const { deleteCartH } = require("../handlers/deleteCartH");
+
+const { handleGetReviews, handleCreateReview } = require("../handlers/reviewH");
+
 const { userRole } = require("../Dashboard/userRole");
 const { userBan } = require("../Dashboard/userBan");
+
 
 const router = Router();
 
@@ -38,11 +42,18 @@ router.delete("/deleteProduct/:productId", deleteProduct);
 router.delete("/deleteCategories/:category", deleteCategories);
 router.post("/users", createUsersH);
 router.get("/users", getAllUsersH);
+
 router.post("/cart", postCartH);
 router.get("/cart", getCartH);
 router.put("/cart/updatequantity", updateQuantityH);
 router.delete("/cart", deleteCartH);
+
+
+//reviews
+router.get("/review", handleGetReviews);
+router.post("/upreview" , handleCreateReview );
 router.put("/users/:userId/role", userRole);
 router.put("/users/:userId/banned", userBan);
+
 
 module.exports = router;
