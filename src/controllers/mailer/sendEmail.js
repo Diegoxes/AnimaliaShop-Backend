@@ -12,12 +12,12 @@ const sendEmail = async (userData, messageData) => {
     // Create transport config
 
     const config = {
-        host: "smtp-relay.brevo.com",
-        port: 2525,
+        host: "smtp.gmail.com",
+        port: 587,
         secure: false,
         auth: {
-            user: process.env.MAIL_USER,
-            pass: process.env.MAIL_PASS,
+            user: "emilopez197@gmail.com",
+            pass: "zdcvseaawpmxemll",
         },
         tls: { rejectUnauthorized: false },
     }
