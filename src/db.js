@@ -63,6 +63,10 @@ Review.belongsToMany(Users, { through: "users_reviews", timestamps: false });
 Order.belongsToMany(Products, { through: "order_product", timestamps: false });
 Products.belongsToMany(Order, { through: "order_product", timestamps: false });
 
+//* RELACION ENTRE ORDEN Y USUARIOS
+Users.hasMany(Order, { foreignKey: "order" });
+Order.belongsTo(Users, { foreignKey: "order" });
+
 //* RELACION ENTRE PRODUCTOS Y USUARIOS CARRITO
 Products.belongsToMany(Users, {
   through: Cart,
