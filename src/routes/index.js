@@ -53,6 +53,6 @@ router.post("/upreview", handleCreateReview);
 router.put("/users/:userId/role", userRole);
 router.put("/users/:userId/banned", userBan);
 
-router.post("/create-checkout-session", createOrderC);
+
 
 module.exports = router;
