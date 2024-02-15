@@ -18,6 +18,7 @@ const { postCartH } = require("../handlers/postCartH");
 const { getCartH } = require("../handlers/getCartH");
 const { updateQuantityH } = require("../handlers/updateQuantityH");
 const { deleteCartH } = require("../handlers/deleteCartH");
+const {createStripe} =require("../controllers/Stripe/createStripe")
 
 const { handleGetReviews, handleCreateReview } = require("../handlers/reviewH");
 
@@ -46,6 +47,7 @@ router.post("/cart", postCartH);
 router.get("/cart", getCartH);
 router.put("/cart/updatequantity", updateQuantityH);
 router.delete("/cart", deleteCartH);
+router.post("/create-checkout-session", createStripe);
 
 //reviews
 router.get("/review", handleGetReviews);
