@@ -23,7 +23,6 @@ const { handleGetReviews, handleCreateReview } = require("../handlers/reviewH");
 
 const { userRole } = require("../Dashboard/userRole");
 const { userBan } = require("../Dashboard/userBan");
-const { createStripe } = require("../controllers/Stripe/createStripe");
 
 const router = Router();
 
@@ -54,6 +53,6 @@ router.post("/upreview", handleCreateReview);
 router.put("/users/:userId/role", userRole);
 router.put("/users/:userId/banned", userBan);
 
-router.post("/create-checkout-session", createStripe);
+router.post("/create-checkout-session", createOrderC);
 
 module.exports = router;
