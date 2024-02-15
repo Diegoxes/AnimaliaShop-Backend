@@ -23,7 +23,7 @@ const { handleGetReviews, handleCreateReview } = require("../handlers/reviewH");
 
 const { userRole } = require("../Dashboard/userRole");
 const { userBan } = require("../Dashboard/userBan");
-
+const { createStripe } = require("../controllers/Stripe/createStripe");
 
 const router = Router();
 
@@ -48,12 +48,12 @@ router.get("/cart", getCartH);
 router.put("/cart/updatequantity", updateQuantityH);
 router.delete("/cart", deleteCartH);
 
-
 //reviews
 router.get("/review", handleGetReviews);
-router.post("/upreview" , handleCreateReview );
+router.post("/upreview", handleCreateReview);
 router.put("/users/:userId/role", userRole);
 router.put("/users/:userId/banned", userBan);
 
+router.post("/create-checkout-session", createStripe);
 
 module.exports = router;

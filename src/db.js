@@ -59,7 +59,7 @@ Users.belongsToMany(Review, { through: "users_reviews", timestamps: false });
 Review.belongsToMany(Users, { through: "users_reviews", timestamps: false });
 /////////////////////////////////////////////////
 
-/*Relacion entre Categoria y Productos */
+//* Relacion entre Categoria y Productos */
 Categories.hasMany(Products, { foreignKey: "category" });
 Products.belongsTo(Categories, { foreignKey: "category" });
 
